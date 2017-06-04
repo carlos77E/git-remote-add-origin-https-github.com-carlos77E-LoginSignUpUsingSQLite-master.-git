@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.william.loginsqlite_tab_rest.R;
 
-/**
- * Created by Alumnos on 11/04/2017.
- */
+
 
 public class Tab02Favotites extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle){

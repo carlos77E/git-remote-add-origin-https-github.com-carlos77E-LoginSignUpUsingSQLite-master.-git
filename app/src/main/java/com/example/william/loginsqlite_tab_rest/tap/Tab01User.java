@@ -14,9 +14,9 @@ import android.widget.ListView;
 
 
 import com.example.william.loginsqlite_tab_rest.R;
-import com.example.william.loginsqlite_tab_rest.adapters.UsersRecyclerAdapter;
+
 import com.example.william.loginsqlite_tab_rest.model.User;
-import com.example.william.loginsqlite_tab_rest.sql.DatabaseHelper;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +24,8 @@ import java.util.List;
 
 
 public class Tab01User extends Fragment {
-    private DatabaseHelper databaseHelper;
-    private UsersRecyclerAdapter usersRecyclerAdapter;
-    public static List<User> listUser ;
+
+    public static List<User> listUser = new ArrayList<User>();
     public int userId = 0;
     ListView listView;
     public int ID = 0;
@@ -35,8 +34,6 @@ public class Tab01User extends Fragment {
         View view = inflater.inflate(R.layout.tab01_user, container, false);
 
         listView = (ListView) view.findViewById(R.id.listView);
-
-
 
 
         int layout = android.R.layout.simple_list_item_1;
