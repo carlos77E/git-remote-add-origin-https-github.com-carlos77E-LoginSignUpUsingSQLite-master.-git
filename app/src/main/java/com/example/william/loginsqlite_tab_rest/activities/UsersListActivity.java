@@ -8,6 +8,9 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 
 
 import com.example.william.loginsqlite_tab_rest.R;
@@ -18,10 +21,13 @@ import com.example.william.loginsqlite_tab_rest.sql.DatabaseHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.william.loginsqlite_tab_rest.tap.Tab01User.listUser;
 
 
 public class UsersListActivity extends AppCompatActivity {
 
+    public int userId=0;
+    Button elimina;
     private AppCompatActivity activity = UsersListActivity.this;
     private AppCompatTextView textViewName;
     private RecyclerView recyclerViewUsers;
@@ -36,8 +42,10 @@ public class UsersListActivity extends AppCompatActivity {
 
         initViews();
         initObjects();
+        eliminar();
 
     }
+
 
     /**
      * Este método consiste en inicializar vistas(views)
@@ -87,5 +95,9 @@ public class UsersListActivity extends AppCompatActivity {
                 usersRecyclerAdapter.notifyDataSetChanged();
             }
         }.execute();
+    }
+
+    public void eliminar(){
+
     }
 }

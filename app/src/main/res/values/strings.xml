@@ -35,4 +35,10 @@
     <string name="text_title">Mov-Aplication</string>
     <string name="text_accounts">Todas las Cuentas</string>
     <string name="text_register">Register</string>
+
+
+
+
+    <string name="action_settings">Salir</string>
+    <string name="title_activity_tab">Tab</string>
 </resources>

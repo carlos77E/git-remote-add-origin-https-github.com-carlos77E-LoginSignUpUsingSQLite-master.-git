@@ -22,6 +22,10 @@
         <activity
             android:name=".activities.UsersListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".tap.Tab"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
     </application>
 

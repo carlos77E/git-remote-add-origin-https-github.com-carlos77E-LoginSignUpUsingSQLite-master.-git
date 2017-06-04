@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.william.loginsqlite_tab_rest.R;
 import com.example.william.loginsqlite_tab_rest.helpers.InputValidation;
 import com.example.william.loginsqlite_tab_rest.sql.DatabaseHelper;
+import com.example.william.loginsqlite_tab_rest.tap.Tab;
 
 import java.util.Arrays;
 
@@ -122,7 +123,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 , textInputEditTextPassword.getText().toString().trim())) {
 
 
-            Intent accountsIntent = new Intent(activity, UsersListActivity.class);
+            Intent accountsIntent = new Intent(activity,Tab.class);
             accountsIntent.putExtra("EMAIL", textInputEditTextEmail.getText().toString().trim());
             emptyInputEditText();
             startActivity(accountsIntent);
