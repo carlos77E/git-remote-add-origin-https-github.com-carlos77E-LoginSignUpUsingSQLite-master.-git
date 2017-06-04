@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Mov-Aplication</string>
+
+
+    <string name="cancel_login">Cancelar</string>
+    <string name="error_login">Error al Conectarse</string>
+    <string name="text_login">Login</string>
+
+
+    <string name="user_message">Usuario</string>
+    <string name="pass_message">Contraseña</string>
+    <string name="Login_name">Mov-Aplication</string>
+    <string name="facebook_message">Ingresar con Facebook</string>
+    <string name="miss_up">¿Olvidate tu contraseña o clave?</string>
+    <string name="create_acount">¿No tienes cuenta? Crea una</string>
+    <string name="login_message">Iniciar Sesion</string>
+    <string name="go_web_message">Ir a la web</string>
+    <string name="title_activity_principal">principal</string>
+
+    <string name="error_message_name">Introduzca el Nombre completo</string>
+    <string name="error_message_email">Ingrese un Email valido</string>
+    <string name="error_message_age">Ingresa la Edad</string>
+    <string name="error_message_password">Ingresa la Contraseña</string>
+    <string name="success_message">Registro exitoso </string>
+    <string name="error_email_exists">Email ya Existe</string>
+    <string name="error_password_match">La Contraseña no coincide</string>
+    <string name="error_valid_email_password">Correo o Contraseña equivocada</string>
+
+    <string name="hint_name">Nombre</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_confirm_password">Confirmar Contraseña</string>
+
+    <string name="text_hello">Hola,</string>
+    <string name="text_title">Mov-Aplication</string>
+    <string name="text_accounts">Todas las Cuentas</string>
+    <string name="text_register">Register</string>
+</resources>
