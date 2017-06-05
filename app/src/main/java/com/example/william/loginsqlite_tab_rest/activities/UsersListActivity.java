@@ -36,7 +36,7 @@ public class UsersListActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users_list);
 
@@ -58,7 +58,7 @@ public class UsersListActivity extends AppCompatActivity {
     /**
      * Este método consiste en inicializar los objetos que se van a utilizar
      */
-    private void initObjects() {
+    public void initObjects() {
         listUsers = new ArrayList<>();
         usersRecyclerAdapter = new UsersRecyclerAdapter(listUsers);
 
