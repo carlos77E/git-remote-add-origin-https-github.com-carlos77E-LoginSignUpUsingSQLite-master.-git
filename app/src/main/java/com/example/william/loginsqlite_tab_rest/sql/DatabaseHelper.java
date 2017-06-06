@@ -3,6 +3,7 @@ package com.example.william.loginsqlite_tab_rest.sql;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,9 +29,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // User Table Columns names
     private static final String COLUMN_USER_ID = "user_id";
-    private static final String COLUMN_USER_NAME = "user_name";
-    private static final String COLUMN_USER_EMAIL = "user_email";
-    private static final String COLUMN_USER_PASSWORD = "user_password";
+    public static final String COLUMN_USER_NAME = "user_name";
+    public static final String COLUMN_USER_EMAIL = "user_email";
+    public static final String COLUMN_USER_PASSWORD = "user_password";
 
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
@@ -39,6 +40,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
+
+
 
     /**
      * Constructor
@@ -68,6 +71,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    private  Context ourcontext;
+    public Void  abrirBaseDeDatos() throws SQLException {
+
+        DatabaseHelper dbhelper = new DatabaseHelper(ourcontext);
+        SQLiteDatabase database = dbhelper.getWritableDatabase();
+
+        return null;
+    }
     /**
      * This method is to create user record
      *
@@ -161,16 +172,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Este método consiste en eliminar el registro de usuario
-     *
-     * @param user
      */
+    public void deleteData(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DatabaseHelper.TABLE_USER, DatabaseHelper.COLUMN_USER_ID + "="
+                + id, null);
+}
+
     public void deleteUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
-        // delete user record by id
+    // delete user record by id
         db.delete(TABLE_USER, COLUMN_USER_ID + " = ?",
-                new String[]{String.valueOf(user.getId())});
+            new String[]{String.valueOf(user.getId())});
         db.close();
-    }
+}
 
     /**
      * Este método para comprobar el usuario existe o no

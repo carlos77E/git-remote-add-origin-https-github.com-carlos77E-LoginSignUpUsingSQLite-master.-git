@@ -16,10 +16,14 @@ import android.widget.Toast;
 
 import com.example.william.loginsqlite_tab_rest.R;
 import com.example.william.loginsqlite_tab_rest.helpers.InputValidation;
+import com.example.william.loginsqlite_tab_rest.model.User;
 import com.example.william.loginsqlite_tab_rest.sql.DatabaseHelper;
 import com.example.william.loginsqlite_tab_rest.tap.Tab;
+import com.example.william.loginsqlite_tab_rest.tap.Tab01User;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -109,6 +113,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * este metodo es para palidar el input text fields y verify login credenciales  de SQLite
      */
     private void verifyFromSQLite() {
+
+
         if (!inputValidation.isInputEditTextFilled(textInputEditTextEmail, textInputLayoutEmail, getString(R.string.error_message_email))) {
             return;
         }
@@ -118,7 +124,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (!inputValidation.isInputEditTextFilled(textInputEditTextPassword, textInputLayoutPassword, getString(R.string.error_message_email))) {
             return;
         }
-
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
                 , textInputEditTextPassword.getText().toString().trim())) {
 
@@ -133,6 +138,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // Snack Bar para mostrar el mensaje de éxito de que el registro es incorrecto
             Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG).show();
         }
+
     }
 
     /**
